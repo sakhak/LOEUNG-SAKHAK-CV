@@ -19,6 +19,7 @@ const activePage = () => {
   navlist.forEach((link) => {
     link.classList.remove("active");
   });
+  // =======BarBox======
   barBox.classList.remove("active");
   setTimeout(() => {
     barBox.classList.add("active");

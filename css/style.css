@@ -11,8 +11,7 @@
 :root {
   --bg-color: #1f242d;
   --second-bg-color: #323946;
-  --main-color: #7cf03d;
-  /* --main-color: yellow; */
+  --main-color: #3498db;
   --white-color: #fff;
   --disabled-color: #fff3;
 }
@@ -77,8 +76,8 @@ nav a.active {
   height: 100%;
   background: var(--bg-color);
   /* border: 2px solid red; */
-  animation: hide-bars 0.5s ease-in-out both;
-  animation-delay: calc(0.1s * var(--i));
+  animation: hide-bars 0.3s ease-in-out both;
+  animation-delay: calc(0.09s * var(--i));
 }
 @keyframes hide-bars {
   0% {
@@ -89,8 +88,8 @@ nav a.active {
   }
 }
 .bars-box.active .bar {
-  animation: show-bars 0.5s ease-in-out both;
-  animation-delay: calc(0.1s * var(--i));
+  animation: show-bars 0.3s ease-in-out both;
+  animation-delay: calc(0.09s * var(--i));
 }
 @keyframes show-bars {
   0% {
@@ -105,7 +104,7 @@ section {
   width: 100%;
   height: 100%;
   padding: 10rem 9% 2rem;
-  /* background: var(--bg-color); */
+  background: var(--bg-color);
   visibility: hidden;
   opacity: 0;
   overflow: hidden;
@@ -394,7 +393,8 @@ section.active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2rem;
-  height: 45rem;
+  /* height: 45rem; */
+  height: auto;
   overflow: auto;
 }
 .resume-list .resume-item {
@@ -416,6 +416,10 @@ section.active {
   position: relative;
   margin-left: 2rem;
   margin-bottom: 2rem;
+}
+
+.resume-item ul li {
+  font-size: 1.6rem;
 }
 .resume-list::-webkit-scrollbar {
   width: 0.7rem;
@@ -578,7 +582,7 @@ section.active {
 .porfolio-carousel .img-item img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 1rem;
 }
