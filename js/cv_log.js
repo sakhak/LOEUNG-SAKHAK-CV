@@ -144,7 +144,6 @@ resumeBtns.forEach((btn, idx) => {
     }
   });
 });
-
 const arrowRight = document.querySelector(".arrow-right");
 const arrowLeft = document.querySelector(".arrow-left");
 let currentSlide = 0;
@@ -153,21 +152,23 @@ const portfolioDetails = document.querySelectorAll(".portfolio-detail");
 const imgSlide = document.querySelector(".img-slide");
 
 function updateCarousel() {
+  // FIXED: Removed the stray "s;" on this line
   imgSlide.style.transform = `translateX(-${currentSlide * 100}%)`;
-  s;
+
+  // Update portfolio details with smooth transition
   portfolioDetails.forEach((detail, index) => {
     detail.classList.remove("active");
     if (index === currentSlide) {
-      setTimeout(() => {
-        detail.classList.add("active");
-      }, 50);
+      detail.classList.add("active");
     }
   });
 
+  // Update button states
   arrowLeft.classList.toggle("disabled", currentSlide === 0);
   arrowRight.classList.toggle("disabled", currentSlide === totalSlides - 1);
 }
 
+// Navigation buttons
 arrowRight.addEventListener("click", () => {
   if (currentSlide < totalSlides - 1) {
     currentSlide++;
@@ -182,6 +183,7 @@ arrowLeft.addEventListener("click", () => {
   }
 });
 
+// Auto-rotation
 let carouselInterval = setInterval(() => {
   if (currentSlide < totalSlides - 1) {
     currentSlide++;
@@ -191,6 +193,7 @@ let carouselInterval = setInterval(() => {
   updateCarousel();
 }, 5000);
 
+// Pause on hover
 const carouselContainer = document.querySelector(".porfolio-carousel");
 carouselContainer.addEventListener("mouseenter", () => {
   clearInterval(carouselInterval);

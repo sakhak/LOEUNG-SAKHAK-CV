@@ -859,7 +859,8 @@ section.active {
 }
 
 .contact-box h2 {
-  font-size: 4.5rem;
+  font-size: 4.2rem;
+  text-align: center;
   margin-bottom: 2rem;
 }
 
@@ -1147,4 +1148,5 @@ section.active {
   .resume-detail.skills .resume-list {
     grid-template-columns: 1fr;
   }
+
 }
