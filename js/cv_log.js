@@ -1,4 +1,5 @@
 const loading = document.querySelector(".loading");
+history.scrollRestoration = "manual";
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -152,10 +153,8 @@ const portfolioDetails = document.querySelectorAll(".portfolio-detail");
 const imgSlide = document.querySelector(".img-slide");
 
 function updateCarousel() {
-  // FIXED: Removed the stray "s;" on this line
   imgSlide.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-  // Update portfolio details with smooth transition
   portfolioDetails.forEach((detail, index) => {
     detail.classList.remove("active");
     if (index === currentSlide) {
@@ -163,12 +162,10 @@ function updateCarousel() {
     }
   });
 
-  // Update button states
   arrowLeft.classList.toggle("disabled", currentSlide === 0);
   arrowRight.classList.toggle("disabled", currentSlide === totalSlides - 1);
 }
 
-// Navigation buttons
 arrowRight.addEventListener("click", () => {
   if (currentSlide < totalSlides - 1) {
     currentSlide++;
@@ -183,7 +180,6 @@ arrowLeft.addEventListener("click", () => {
   }
 });
 
-// Auto-rotation
 let carouselInterval = setInterval(() => {
   if (currentSlide < totalSlides - 1) {
     currentSlide++;
@@ -193,7 +189,6 @@ let carouselInterval = setInterval(() => {
   updateCarousel();
 }, 5000);
 
-// Pause on hover
 const carouselContainer = document.querySelector(".porfolio-carousel");
 carouselContainer.addEventListener("mouseenter", () => {
   clearInterval(carouselInterval);
@@ -231,14 +226,14 @@ contactForm.addEventListener("submit", (e) => {
 
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
+  // const header = document.querySelector("header");
   const currentScroll = window.pageYOffset;
 
-  if (currentScroll > lastScroll && currentScroll > 100) {
-    header.style.transform = "translateY(-100%)";
-  } else {
-    header.style.transform = "translateY(0)";
-  }
+  // if (currentScroll > lastScroll && currentScroll > 100) {
+  //   header.style.transform = "translateY(-100%)";
+  // } else {
+  //   header.style.transform = "translateY(0)";
+  // }
 
   updateActiveNavLink();
 
