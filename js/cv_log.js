@@ -1,5 +1,4 @@
 const loading = document.querySelector(".loading");
-// history.scrollRestoration = "manual";
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -105,10 +104,10 @@ logolink.addEventListener("click", (e) => {
 
   navlist[0].classList.add("active");
 
-  // window.scrollTo({
-  //   top: 0,
-  //   behavior: "smooth",
-  // });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 
   if (window.innerWidth <= 768) {
     menuIcon.classList.remove("bx-x");
