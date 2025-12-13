@@ -8,7 +8,6 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/449a61783b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
   </head>
   <body>
     <div class="loading">
@@ -461,22 +460,27 @@
             </div>
           </div>
         </div>
-        <div class="contact-box">
-          <form action="" id="contactForm">
-            <h2 class="heading">Contact <span>Me!</span></h2>
+       <div class="contact-box">
+        <form id="emailForm">
+          <h2 class="heading">Contact <span>Me!</span></h2>
             <div class="field-box">
-              <input type="text" placeholder="Full Name" required />
-              <input type="email" placeholder="Email Address" required />
-              <input type="text" placeholder="Phone Number" required />
-              <input type="text" placeholder="Email Subject" required />
-              <textarea name="message" id="message" placeholder="Your message" required></textarea>
+              <input type="text" id="name" placeholder="Full Name" required />
+              <input type="email" id="email" placeholder="Email Address" required />
+              <input type="tel" id="phonenumber" placeholder="Phone Number" required />
+              <input type="text" id="emailsubject" placeholder="Email Subject" required />
+              <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-        </div>
+            <button type="submit" id="sendBtn" class="btn">
+            <span id="btnText">Send Message</span>
+            <div class="spinner" id="spinner" style="display:none;"></div>
+          </button>
+        </form>
+        <div id="status"></div>
+      </div>
       </div>
     </section>
-
     <script src="./js/cv_log.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="./js/email.js"></script>
   </body>
 </html>
